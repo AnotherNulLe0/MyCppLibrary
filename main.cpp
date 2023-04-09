@@ -1,5 +1,3 @@
-#include <iostream>
-
 using namespace std;
 
 #ifndef Data
@@ -95,7 +93,6 @@ class List {
                     }
                 }
                 sorted.Add(smallest);
-                cout << smallest << " - " << unsorted.Index(smallest) << endl;
                 unsorted.Remove(unsorted.Index(smallest));
                 smallest = biggest;
                 times++;
