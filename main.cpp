@@ -1,11 +1,11 @@
 using namespace std;
 
-#ifndef Data
-#define Data
+#ifndef ListData
+#define ListData
 /*
     Notes: 
-        BSort doesn't work on objects without > operator support
-        InverseBSort doesn't work on objects without < operator support
+        BubbleSort and InversedSelectionSort doesn't work on objects without > operator support
+        InverseBubbleSort doesn't work on objects without < operator support
 */
 template <class ListType>
 class List {
@@ -63,7 +63,7 @@ class List {
         ListType* ToArray() {
             return listElements;
         }
-        void BSort() {
+        void BubbleSort() {
             int times = 0;
             ListType buf;
             for (int i = 0; i < size; i++) {
@@ -77,7 +77,7 @@ class List {
                 times++;
             }
         }
-        void InversedSSort() {
+        void InversedSelectionSort() {
             int times = 0;
             ListType smallest;
             ListType biggest;
@@ -99,7 +99,7 @@ class List {
             }
             listElements = sorted.ToArray();
         }
-        void InverseBSort() {
+        void InverseBubbleSort() {
             int times = 0;
             ListType buf;
             for (int i = 0; i < size; i++) {
@@ -218,7 +218,9 @@ class List {
         }
 };
 /*
-    Note: sort doesn't work on objects without > operator support 
+    Notes: 
+        BubbleSort and InversedSelectionSort doesn't work on objects without > operator support
+        InverseBubbleSort doesn't work on objects without < operator support
 */
 template <class ListType>
 class Stack : List<ListType> {
@@ -244,7 +246,9 @@ class Stack : List<ListType> {
         }
 };
 /*
-    Note: sort doesn't work on objects without > operator support 
+    Notes: 
+        BubbleSort and InversedSelectionSort doesn't work on objects without > operator support
+        InverseBubbleSort doesn't work on objects without < operator support
 */
 template <class ListType>
 class Queue : List<ListType>{
