@@ -42,12 +42,12 @@ class List {
             for (int i = 0; i < size; i++) {
                 buf[i] = listElements[i];
             }
-            delete listElements;
+            delete[] listElements;
             listElements = new ListType[capacity];
             for (int i = 0; i < size; i++) {
                 listElements[i] = buf[i];
             }
-            delete buf;
+            delete[] buf;
         }
         void Remove() {
             listElements[size-1] = 0;
